@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class PlannerApplication
 
 fun main(args: Array<String>) {
-	runApplication<PlannerApplication>(*args)
+    runApplication<PlannerApplication>(*args)
 }

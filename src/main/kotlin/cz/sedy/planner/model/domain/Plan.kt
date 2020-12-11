@@ -1,5 +1,6 @@
 package cz.sedy.planner.model.domain
 
+import cz.sedy.planner.model.Identified
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.Duration
@@ -10,7 +11,7 @@ import java.time.Instant
 data class Plan(
 
         @Id
-        val id: String?,
+        override val id: String?,
 
         val planStart: Instant,
 
@@ -24,4 +25,4 @@ data class Plan(
 
         val evaluationId: String
 
-)
+) : Identified
