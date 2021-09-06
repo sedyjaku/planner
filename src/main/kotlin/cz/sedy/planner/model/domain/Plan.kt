@@ -7,7 +7,6 @@ import java.time.Duration
 import java.time.Instant
 
 @Document
-
 data class Plan(
 
         @Id

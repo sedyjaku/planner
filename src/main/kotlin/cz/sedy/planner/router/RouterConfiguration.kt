@@ -14,11 +14,12 @@ class RouterConfiguration {
     @FlowPreview
     @Bean
     fun activityPrototypeRoutes(handler: ActivityPrototypeHandler) = coRouter {
-        path("/$ACTIVITY_PROTOTYPE_ENDPOINT")
-        GET("", handler::getAll)
-        GET("/{id}", handler::getById)
-        POST("", handler::createActivityPrototype)
-        PUT("/{id}", handler::updateActivityPrototype)
-        DELETE("/{id}", handler::deleteActivityPrototype)
+        ACTIVITY_PROTOTYPE_ENDPOINT.nest {
+            GET("", handler::getAll)
+            GET("/{id}", handler::getById)
+            POST("", handler::createActivityPrototype)
+            PUT("/{id}", handler::updateActivityPrototype)
+            DELETE("/{id}", handler::deleteActivityPrototype)
+        }
     }
 }

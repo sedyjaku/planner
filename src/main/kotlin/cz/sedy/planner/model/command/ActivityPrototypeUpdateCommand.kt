@@ -1,12 +1,10 @@
 package cz.sedy.planner.model.command
 
-import cz.sedy.planner.model.enum.ActivityType
-
 data class ActivityPrototypeUpdateCommand(
 
         val id: String,
 
-        val type: ActivityType,
+        val type: String,
 
         val name: String,
 

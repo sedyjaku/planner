@@ -4,9 +4,14 @@ import cz.sedy.planner.config.MappingConfig
 import cz.sedy.planner.model.command.ActivityPrototypeUpdateCommand
 import cz.sedy.planner.model.controller.request.ActivityPrototypeRequest
 import org.mapstruct.Mapper
+import org.mapstruct.Mapping
 
 @Mapper(config = MappingConfig::class)
 interface ActivityPrototypeUpdateCommandMapper {
 
-    fun createFromRequest(request: ActivityPrototypeRequest, id: String): ActivityPrototypeUpdateCommand
+    @Mapping(target = "id", source = "activityPrototypeId")
+    fun createFromRequest(
+        request: ActivityPrototypeRequest,
+        activityPrototypeId: String
+    ): ActivityPrototypeUpdateCommand
 }
